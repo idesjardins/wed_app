@@ -1,6 +1,8 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
+    	t.string :hashed_password
+    	t.string :email
     	t.string :login
     	t.string :password
     	t.string :password_confirmation

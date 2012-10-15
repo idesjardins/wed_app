@@ -1,7 +1,12 @@
 WedApp::Application.routes.draw do
-  resources :users
-  resources :guests
-  resources :guest_list
+  resources :users do
+    resources :guest_list do
+      resources :guests
+    end
+  end
+  resource :session
+  match '/login' => "sessions#new", :as => "login"
+  match '/logout' => "sessions#destroy", :as => "logout"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
