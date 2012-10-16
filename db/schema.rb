@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20121015200042) do
 
   create_table "guest_lists", :force => true do |t|
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -23,8 +24,9 @@ ActiveRecord::Schema.define(:version => 20121015200042) do
     t.string   "last_name"
     t.string   "relation"
     t.boolean  "wed_party"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "guest_list_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "sessions", :force => true do |t|
